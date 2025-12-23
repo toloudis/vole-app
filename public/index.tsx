@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, type RouteObject, RouterProvider } from "react-router-dom";
+import { createHashRouter, type RouteObject, RouterProvider } from "react-router-dom";
 
 import { decodeGitHubPagesUrl, isEncodedPathUrl, tryRemoveHashRouting } from "../website/utils/gh_route_utils";
 import firestore from "./firebase/configure_firebase";
@@ -59,7 +59,7 @@ const routes: RouteObject[] = [
   },
 ];
 
-const router = createBrowserRouter(routes, { basename: basename });
+const router = createHashRouter(routes);
 
 const root = createRoot(document.getElementById("cell-viewer")!);
 root.render(
