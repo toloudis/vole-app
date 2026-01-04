@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: true,
       sourcemap: isDev,
       rollupOptions: {
-        external: [],
+        external: ['@zarrita/storage'],
         output: {
           manualChunks: undefined,
           assetFileNames: 'assets/[name]-[hash][extname]',
